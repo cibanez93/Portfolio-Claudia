@@ -365,8 +365,9 @@ footer{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; pa
 .launch-note{display:grid; gap:4px; background:color-mix(in srgb,#FCC4B1 30%,var(--surface)); border:1px solid #FCC4B1; border-radius:12px; padding:14px 18px; margin-bottom:20px; font-size:14px; max-width:860px}
 .launch-note b{font:700 15px/1.3 var(--sub)}
 .launch-note span{color:var(--muted)}
+.launch-note b .mes{color:inherit}
 .pack .foot.price .brk{flex-basis:100%; height:0}
-.pack .foot.price .tag-launch{ font:600 10.5px/1 var(--mono); letter-spacing:.06em; text-transform:uppercase; color:#121826; background:#FCC4B1; padding:5px 9px; border-radius:99px}
+.pack .foot.price .tag-launch{ font:600 10.5px/1 var(--mono); letter-spacing:.06em; text-transform:uppercase; color:var(--accent-text); background:transparent; padding:0}
 .pack .foot.price .old{font:500 15px/1 var(--mono); color:var(--muted); text-decoration-thickness:1.5px}
 .maint{margin-top:18px; font-size:14px; color:var(--muted)}
 .maint b{color:var(--ink); font-weight:600}
@@ -742,8 +743,8 @@ async function opinionesBooksy() {
       <p>Todos los paquetes se adaptan. Te preparo un presupuesto cerrado después de la primera charla.</p>
     </div>
     <div class="launch-note">
-      <b>Precio de lanzamiento para mis primeros clientes.</b>
-      <span>Es un precio especial a cambio de que dejes una opinión con tu nombre y me permitas mostrar tu web en mi portfolio. Después se aplica el precio normal.</span>
+      <b>Precios de <span class="mes">octubre</span></b>
+      <span>Precio especial a cambio de una opinión con tu nombre y de poder mostrar tu web en mi portfolio.</span>
     </div>
     <div class="packs">
       <article class="pack">
@@ -751,21 +752,21 @@ async function opinionesBooksy() {
         <h3>Web esencial</h3>
         <p>Para negocios que necesitan estar en internet con buena imagen.</p>
         <ul><li>Hasta 5 páginas</li><li>Diseño a medida y adaptado al móvil</li><li>Formulario de contacto y mapa</li><li>SEO básico para tu zona</li></ul>
-        <div class="foot price"><span class="tag-launch">Precio de lanzamiento</span><span class="brk"></span><small>desde</small> 400 €<s class="old" aria-label="precio normal 600 €">600 €</s><span class="iva">+ IVA · después, desde 600 €</span></div>
+        <div class="foot price"><span class="tag-launch">Precio de <span class="mes">octubre</span></span><span class="brk"></span><small>desde</small> 400 €<span class="iva">+ IVA</span></div>
       </article>
       <article class="pack star">
         <span class="label">Recomendado</span>
         <h3>Reservas y panel</h3>
         <p>Para salones, centros y consultas que viven de las citas.</p>
         <ul><li>Todo lo de Web esencial</li><li>Reservas conectadas (Booksy u otras)</li><li>Reseñas automáticas</li><li>Panel para editar servicios y precios</li><li>Blog y galería</li></ul>
-        <div class="foot price"><span class="tag-launch">Precio de lanzamiento</span><span class="brk"></span><small>desde</small> 900 €<s class="old" aria-label="precio normal 1.300 €">1.300 €</s><span class="iva">+ IVA · después, desde 1.300 €</span></div>
+        <div class="foot price"><span class="tag-launch">Precio de <span class="mes">octubre</span></span><span class="brk"></span><small>desde</small> 900 €<span class="iva">+ IVA</span></div>
       </article>
       <article class="pack">
         <span class="label">Para vender</span>
         <h3>Tienda online</h3>
         <p>Para quien quiere vender productos, bonos o tarjetas regalo.</p>
         <ul><li>Todo lo de Reservas y panel</li><li>Catálogo y carrito</li><li>Pago online seguro</li><li>Tarjetas regalo y bonos</li></ul>
-        <div class="foot price"><span class="tag-launch">Precio de lanzamiento</span><span class="brk"></span><small>desde</small> 1.600 €<s class="old" aria-label="precio normal 2.000 €">2.000 €</s><span class="iva">+ IVA · después, desde 2.000 €</span></div>
+        <div class="foot price"><span class="tag-launch">Precio de <span class="mes">octubre</span></span><span class="brk"></span><small>desde</small> 1.600 €<span class="iva">+ IVA</span></div>
       </article>
     </div>
     <p class="maint"><b>Mantenimiento mensual opcional:</b> 40–50 €/mes + IVA.</p>
@@ -884,6 +885,14 @@ async function opinionesBooksy() {
 
 // Burbuja de WhatsApp
 document.getElementById('wa-bubble-x').addEventListener('click', () => { document.getElementById('wa-bubble').hidden = true; });
+
+// Mes actual en los precios
+(() => {
+  try {
+    const mes = new Intl.DateTimeFormat('es-ES', { month: 'long', timeZone: 'Europe/Madrid' }).format(new Date());
+    document.querySelectorAll('.mes').forEach(el => { el.textContent = mes; });
+  } catch (e) {}
+})();
 </script>
 
 </body>

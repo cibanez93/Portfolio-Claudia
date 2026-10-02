@@ -372,6 +372,9 @@ footer{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; pa
 .maint{margin-top:18px; font-size:14px; color:var(--muted)}
 .maint b{color:var(--ink); font-weight:600}
 @media (max-width:760px){ .launch-note{font-size:12.5px; padding:12px 14px} .launch-note b{font-size:13.5px} .pack .foot.price .old{font-size:13px} .maint{font-size:12.5px} }
+
+/* logo en contacto */
+.contact-logo{display:block; width:min(260px,70%); height:auto; margin-bottom:18px}
 /* ===== Ajustes para móvil y tablet ===== */
 /* Tablet */
 @media (max-width:1024px){
@@ -780,6 +783,7 @@ async function opinionesBooksy() {
 
   <section class="contact" id="contacto">
     <div>
+      <img class="contact-logo" src="logo.png" alt="Logotipo de Claudia, frontend developer" width="1464" height="1307" loading="lazy">
       <h2>¿Hacemos tu web?</h2>
       <p>Escríbeme contándome a qué se dedica tu negocio y qué te gustaría tener. Te respondo en menos de 24 horas con una propuesta.</p>
     </div>

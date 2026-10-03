@@ -296,7 +296,9 @@ section{padding-block:80px; border-top:1px solid var(--line)}
 /* packages */
 .packs{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
 .pack{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:16px}
-.pack.star{border:2px solid var(--accent-text); box-shadow:var(--shadow)}
+.pack{cursor:pointer; transition:background .2s, border-color .2s, box-shadow .2s, transform .2s; border-width:2px}
+.pack:hover{transform:translateY(-2px)}
+.pack.sel{border-color:var(--accent-text); box-shadow:var(--shadow)}
 .pack .label{color:var(--accent-text)}
 .pack h3{font-size:26px; font-weight:800}
 .pack > p{color:var(--muted)}
@@ -390,8 +392,11 @@ footer{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; pa
 .steps .ico{background:var(--peach); border-color:transparent}
 .steps .when{background:var(--peach)}
 /* paquete recomendado en verde */
-.pack.star{background:var(--sage); border-color:var(--accent-text)}
-.pack.star .tag-launch{background:var(--surface)}
+.pack.sel{background:var(--sage)}
+.pack.sel .tag-launch{background:var(--surface)}
+.btn-hire{display:flex; justify-content:center; align-items:center; gap:8px; margin-top:4px; padding:12px 18px; border-radius:999px; background:var(--accent-text); color:var(--bg); font:600 15px/1 var(--body); text-decoration:none; transition:transform .15s, filter .15s}
+.btn-hire:hover{transform:translateY(-2px); filter:brightness(1.08)}
+.pack:focus-visible{outline:3px solid var(--accent-text); outline-offset:3px}
 /* pie */
 footer{border-top:0; background:var(--sage); box-shadow:0 0 0 100vmax var(--sage); clip-path:inset(0 -100vmax)}
 
@@ -786,27 +791,30 @@ async function opinionesBooksy() {
       <h2>Elige el punto de partida</h2>
       <p>Todos los paquetes se adaptan. Te preparo un presupuesto cerrado después de la primera charla.</p>
     </div>
-    <div class="packs">
-      <article class="pack">
+    <div class="packs" role="radiogroup" aria-label="Elige un paquete">
+      <article class="pack" role="radio" tabindex="-1" aria-checked="false">
         <span class="label">Para empezar</span>
         <h3>Web esencial</h3>
         <p>Para negocios que necesitan estar en internet con buena imagen.</p>
         <ul><li>Hasta 5 páginas</li><li>Diseño a medida y adaptado al móvil</li><li>Formulario de contacto y mapa</li><li>SEO básico para tu zona</li></ul>
         <div class="foot price"><span class="tag-launch">Precio de <span class="mes">octubre</span></span><span class="brk"></span><small>desde</small> 400 €<s class="old" aria-label="precio normal 600 €">600 €</s><span class="iva">+ IVA · después, desde 600 €</span></div>
+        <a class="btn-hire" href="https://wa.me/34655397379?text=Hola%20Claudia%2C%20quiero%20contratar%20el%20paquete%20Web%20esencial.%20%C2%BFHablamos%3F" target="_blank" rel="noopener">Contratar</a>
       </article>
-      <article class="pack star">
+      <article class="pack star sel" role="radio" tabindex="0" aria-checked="true">
         <span class="label">Recomendado</span>
         <h3>Reservas y panel</h3>
         <p>Para salones, centros y consultas que viven de las citas.</p>
         <ul><li>Todo lo de Web esencial</li><li>Reservas conectadas (Booksy u otras)</li><li>Reseñas automáticas</li><li>Panel para editar servicios y precios</li><li>Blog y galería</li></ul>
         <div class="foot price"><span class="tag-launch">Precio de <span class="mes">octubre</span></span><span class="brk"></span><small>desde</small> 900 €<s class="old" aria-label="precio normal 1.300 €">1.300 €</s><span class="iva">+ IVA · después, desde 1.300 €</span></div>
+        <a class="btn-hire" href="https://wa.me/34655397379?text=Hola%20Claudia%2C%20quiero%20contratar%20el%20paquete%20Reservas%20y%20panel.%20%C2%BFHablamos%3F" target="_blank" rel="noopener">Contratar</a>
       </article>
-      <article class="pack">
+      <article class="pack" role="radio" tabindex="-1" aria-checked="false">
         <span class="label">Para vender</span>
         <h3>Tienda online</h3>
         <p>Para quien quiere vender productos, bonos o tarjetas regalo.</p>
         <ul><li>Todo lo de Reservas y panel</li><li>Catálogo y carrito</li><li>Pago online seguro</li><li>Tarjetas regalo y bonos</li></ul>
         <div class="foot price"><span class="tag-launch">Precio de <span class="mes">octubre</span></span><span class="brk"></span><small>desde</small> 1.600 €<s class="old" aria-label="precio normal 2.000 €">2.000 €</s><span class="iva">+ IVA · después, desde 2.000 €</span></div>
+        <a class="btn-hire" href="https://wa.me/34655397379?text=Hola%20Claudia%2C%20quiero%20contratar%20el%20paquete%20Tienda%20online.%20%C2%BFHablamos%3F" target="_blank" rel="noopener">Contratar</a>
       </article>
     </div>
     <p class="maint"><b>Mantenimiento mensual opcional:</b> 40–50 €/mes + IVA.</p>
@@ -935,6 +943,19 @@ document.getElementById('wa-bubble-x').addEventListener('click', () => { documen
     const mes = new Intl.DateTimeFormat('es-ES', { month: 'long', timeZone: 'Europe/Madrid' }).format(new Date());
     document.querySelectorAll('.mes').forEach(el => { el.textContent = mes; });
   } catch (e) {}
+})();
+
+// Paquetes: el seleccionado se pone en verde
+(() => {
+  const packs=[...document.querySelectorAll('.packs .pack')];
+  const pick=p=>packs.forEach(x=>{const on=x===p; x.classList.toggle('sel',on); x.setAttribute('aria-checked',on); x.tabIndex=on?0:-1;});
+  packs.forEach((p,i)=>{
+    p.addEventListener('click',e=>{ if(!e.target.closest('.btn-hire')) pick(p); });
+    p.addEventListener('keydown',e=>{
+      if(e.key===' '||e.key==='Enter'){ if(!e.target.closest('.btn-hire')){e.preventDefault(); pick(p);} }
+      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){ const n=packs[(i+(e.key==='ArrowRight'?1:packs.length-1))%packs.length]; pick(n); n.focus(); }
+    });
+  });
 })();
 </script>
 

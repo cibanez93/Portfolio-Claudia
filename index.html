@@ -413,6 +413,14 @@ footer{border-top:0; background:var(--sage); box-shadow:0 0 0 100vmax var(--sage
 .head-img{flex-wrap:wrap; align-items:center}
 .head-shot{width:min(480px,100%); margin-bottom:0}
 @media (max-width:900px){ .hero-chica{width:min(280px,75%)} .head-img{flex-direction:column; align-items:flex-start} .head-shot{width:100%} }
+
+/* menú lateral: se puede desplazar y es más compacto en pantallas bajas (móvil en horizontal) */
+.drawer{overflow-y:auto; overscroll-behavior:contain; -webkit-overflow-scrolling:touch}
+@media (max-height:520px){
+  .drawer{gap:12px; padding-top:calc(12px + env(safe-area-inset-top,0px)); padding-bottom:calc(14px + env(safe-area-inset-bottom,0px)); padding-right:calc(24px + env(safe-area-inset-right,0px))}
+  .drawer ul a{padding:7px 0; font-size:15px}
+  .drawer-close{width:30px; height:30px; font-size:18px}
+}
 /* ===== Ajustes para móvil y tablet ===== */
 /* Tablet */
 @media (max-width:1024px){

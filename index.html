@@ -24,7 +24,7 @@
   "telephone": "+34655397379",
   "description": "Diseño y desarrollo de webs a medida para negocios: reservas online, tiendas, tarjetas regalo y paneles de gestión.",
   "areaServed": "ES",
-  "sameAs": ["https://www.instagram.com/claudia.ibanez.dev/"],
+  "sameAs": ["https://www.instagram.com/claudia.ibanez.dev/", "https://www.linkedin.com/in/cibanezdev"],
   "priceRange": "400€ - 2.000€",
   "founder": { "@type": "Person", "name": "Claudia Ibáñez", "jobTitle": "Frontend developer" }
 }
@@ -103,7 +103,7 @@ nav ul a{text-decoration:none; color:var(--muted)} nav ul a:hover{color:var(--in
 .wa:hover{transform:translateY(-2px)}
 .wa-ico{width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linejoin:round; stroke-linecap:round}
 .drawer .btn{padding:9px 16px; font-size:13px; align-self:flex-start}
-.wa-line{display:flex; align-items:center; gap:12px}
+.wa-line{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
 .nav-actions{display:flex; align-items:center; gap:8px}
 .wa-nav{width:40px; height:40px}
 .wa-nav .wa-ico{width:21px; height:21px}
@@ -401,7 +401,7 @@ footer{border-top:0; background:var(--sage); box-shadow:0 0 0 100vmax var(--sage
 .head-chica{width:clamp(140px,17vw,210px); height:auto; flex:none; margin-bottom:-28px}
 @media (max-width:760px){ .head-img{flex-wrap:nowrap; gap:12px} .head-chica{width:110px; margin-bottom:-14px} }
 
-.drawer-ig{display:inline-flex; align-items:center; gap:8px; color:var(--accent-text); text-decoration:none; font:500 13px/1 var(--mono)}
+.drawer-ig{display:inline-flex; margin-top:-8px; align-items:center; gap:8px; color:var(--accent-text); text-decoration:none; font:500 13px/1 var(--mono)}
 /* ===== Ajustes para móvil y tablet ===== */
 /* Tablet */
 @media (max-width:1024px){
@@ -522,12 +522,14 @@ footer{border-top:0; background:var(--sage); box-shadow:0 0 0 100vmax var(--sage
     <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1Z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.9A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22 22 0 0 1-4 2Z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></symbol>
     <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19l-4 1Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2L9 9.5Z"/></symbol>
     <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></symbol>
+    <symbol id="i-li" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><path d="M8 10.5v6M8 7.6v.1M11.5 16.5v-6M11.5 13.2c0-1.6 1-2.7 2.4-2.7s2.3 1 2.3 2.7v3.3"/></symbol>
   </defs>
 </svg>
 <nav>
   <div class="wrap">
     <a class="logo" href="/">Claudia Ibáñez <span>/ frontend developer</span></a>
     <div class="nav-actions">
+      <a class="wa wa-nav" href="https://www.linkedin.com/in/cibanezdev" target="_blank" rel="noopener" aria-label="LinkedIn de Claudia Ibáñez"><svg class="wa-ico" aria-hidden="true"><use href="#i-li"/></svg></a>
       <a class="wa wa-nav" href="https://www.instagram.com/claudia.ibanez.dev/" target="_blank" rel="noopener" aria-label="Instagram @claudia.ibanez.dev"><svg class="wa-ico" aria-hidden="true"><use href="#i-ig"/></svg></a>
       <a class="wa wa-nav" href="https://wa.me/34655397379?text=Hola%20Claudia%2C%20me%20interesa%20una%20web%20para%20mi%20negocio" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="wa-ico" aria-hidden="true"><use href="#i-wa"/></svg></a>
       <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="drawer" aria-label="Abrir menú"><i></i><i></i><i></i></button>
@@ -547,6 +549,7 @@ footer{border-top:0; background:var(--sage); box-shadow:0 0 0 100vmax var(--sage
   </ul>
   <a class="btn" href="#contacto">Hablemos</a>
   <a class="drawer-ig" href="https://www.instagram.com/claudia.ibanez.dev/" target="_blank" rel="noopener"><svg class="wa-ico" aria-hidden="true"><use href="#i-ig"/></svg>@claudia.ibanez.dev</a>
+  <a class="drawer-ig" href="https://www.linkedin.com/in/cibanezdev" target="_blank" rel="noopener"><svg class="wa-ico" aria-hidden="true"><use href="#i-li"/></svg>LinkedIn</a>
 </aside>
 
 <main class="wrap" id="inicio">
@@ -826,7 +829,7 @@ async function opinionesBooksy() {
       <span class="label" style="margin-top:6px">O por WhatsApp</span>
       <span class="wa-line"><span class="addr">655 397 379</span><a class="wa" aria-label="Escribir por WhatsApp al 655 397 379" href="https://wa.me/34655397379?text=Hola%20Claudia%2C%20me%20interesa%20una%20web%20para%20mi%20negocio" target="_blank" rel="noopener"><svg class="wa-ico" aria-hidden="true"><use href="#i-wa"/></svg></a></span>
       <span class="label" style="margin-top:6px">Sígueme</span>
-      <span class="wa-line"><span class="addr">@claudia.ibanez.dev</span><a class="wa " href="https://www.instagram.com/claudia.ibanez.dev/" target="_blank" rel="noopener" aria-label="Instagram @claudia.ibanez.dev"><svg class="wa-ico" aria-hidden="true"><use href="#i-ig"/></svg></a></span>
+      <span class="wa-line"><span class="addr">@claudia.ibanez.dev</span><a class="wa " href="https://www.instagram.com/claudia.ibanez.dev/" target="_blank" rel="noopener" aria-label="Instagram @claudia.ibanez.dev"><svg class="wa-ico" aria-hidden="true"><use href="#i-ig"/></svg></a><a class="wa " href="https://www.linkedin.com/in/cibanezdev" target="_blank" rel="noopener" aria-label="LinkedIn de Claudia Ibáñez"><svg class="wa-ico" aria-hidden="true"><use href="#i-li"/></svg></a></span>
       <small id="copied" aria-live="polite">Primera charla gratis y sin compromiso.</small>
     </div>
   </section>

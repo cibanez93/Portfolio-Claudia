@@ -393,6 +393,12 @@ footer{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; pa
 .pack.star .tag-launch{background:var(--surface)}
 /* pie */
 footer{border-top:0; background:var(--sage); box-shadow:0 0 0 100vmax var(--sage); clip-path:inset(0 -100vmax)}
+
+/* chica con portátil en Proyecto destacado */
+.head-img{align-items:flex-end; flex-wrap:nowrap}
+.head-img .head-txt{display:grid; gap:14px}
+.head-chica{width:clamp(140px,17vw,210px); height:auto; flex:none; margin-bottom:-28px}
+@media (max-width:760px){ .head-img{flex-wrap:nowrap; gap:12px} .head-chica{width:110px; margin-bottom:-14px} }
 /* ===== Ajustes para móvil y tablet ===== */
 /* Tablet */
 @media (max-width:1024px){
@@ -593,9 +599,11 @@ footer{border-top:0; background:var(--sage); box-shadow:0 0 0 100vmax var(--sage
   </section>
 
   <section id="proyecto">
-    <div class="head">
+    <div class="head head-img"><div class="head-txt">
       <h2>Proyecto destacado</h2>
       <p>Laksmir Beauty Salon · pulsa cada función para verla funcionando y ver su código.</p>
+      </div>
+      <img class="head-chica" src="chica-portatil.png" alt="Ilustración de Claudia programando con su portátil" width="965" height="1200" loading="lazy">
     </div>
 
     <div class="lab">

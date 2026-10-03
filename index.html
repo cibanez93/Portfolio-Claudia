@@ -402,6 +402,12 @@ footer{border-top:0; background:var(--sage); box-shadow:0 0 0 100vmax var(--sage
 @media (max-width:760px){ .head-img{flex-wrap:nowrap; gap:12px} .head-chica{width:110px; margin-bottom:-14px} }
 
 .drawer-ig{display:inline-flex; margin-top:-8px; align-items:center; gap:8px; color:var(--accent-text); text-decoration:none; font:500 13px/1 var(--mono)}
+
+/* chica en portada y captura en proyecto */
+.hero-chica{display:block; width:min(400px,100%); height:auto; justify-self:center}
+.head-img{flex-wrap:wrap; align-items:center}
+.head-shot{width:min(480px,100%); margin-bottom:0}
+@media (max-width:900px){ .hero-chica{width:min(280px,75%)} .head-img{flex-direction:column; align-items:flex-start} .head-shot{width:100%} }
 /* ===== Ajustes para móvil y tablet ===== */
 /* Tablet */
 @media (max-width:1024px){
@@ -564,10 +570,7 @@ footer{border-top:0; background:var(--sage); box-shadow:0 0 0 100vmax var(--sage
       </div>
     </div>
 
-    <div class="browser" aria-label="Página de inicio de Laksmir Beauty Salon">
-      <div class="bar"><b></b><b></b><b></b><div class="url">laksmirbeautysalon · inicio</div></div>
-      <img class="shot" src="laksmir.jpg" width="1280" height="860" alt="Página de inicio de Laksmir Beauty Salon: «Tu momento para brillar», con botones de reserva, valoraciones de Google y Booksy y una foto de una clienta.">
-    </div>
+    <img class="hero-chica" src="chica-portatil.png" alt="Ilustración de Claudia programando con su portátil" width="965" height="1200">
   </header>
 
   <section id="servicios">
@@ -612,7 +615,10 @@ footer{border-top:0; background:var(--sage); box-shadow:0 0 0 100vmax var(--sage
       <h2>Proyecto destacado</h2>
       <p>Laksmir Beauty Salon · pulsa cada función para verla funcionando y ver su código.</p>
       </div>
-      <img class="head-chica" src="chica-portatil.png" alt="Ilustración de Claudia programando con su portátil" width="965" height="1200" loading="lazy">
+      <div class="browser head-shot" aria-label="Página de inicio de Laksmir Beauty Salon">
+      <div class="bar"><b></b><b></b><b></b><div class="url">laksmirbeautysalon · inicio</div></div>
+      <img class="shot" src="laksmir.jpg" width="1280" height="860" alt="Página de inicio de Laksmir Beauty Salon: «Tu momento para brillar», con botones de reserva, valoraciones de Google y Booksy y una foto de una clienta.">
+    </div>
     </div>
 
     <div class="lab">

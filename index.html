@@ -39,9 +39,7 @@ body{margin:0}
 img{max-width:100%}
 [hidden]{display:none!important}
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
 :root{
   --bg:#F7F2EB; --surface:#FFFDFA; --ink:#43352C; --muted:#7A6455; --line:#E8DDD0;
@@ -422,6 +420,9 @@ footer{border-top:0; background:var(--sage); box-shadow:0 0 0 100vmax var(--sage
   .drawer ul a{padding:7px 0; font-size:15px}
   .drawer-close{width:30px; height:30px; font-size:18px}
 }
+
+.legal-links{display:flex; flex-wrap:wrap; gap:6px 16px; font-size:12.5px}
+.legal-links a{color:var(--muted)} .legal-links a:hover{color:var(--ink)}
 /* ===== Ajustes para móvil y tablet ===== */
 /* Tablet */
 @media (max-width:1024px){
@@ -858,6 +859,7 @@ async function opinionesBooksy() {
 
   <footer>
     <span>© 2026 Claudia Ibáñez · Todos los derechos reservados · Diseño y programo con <span class="heart" aria-label="amor">♥</span></span>
+    <div class="legal-links" role="navigation" aria-label="Información legal"><a href="/aviso-legal">Aviso legal</a><a href="/privacidad">Privacidad</a><a href="/cookies">Cookies</a><a href="/condiciones">Condiciones de contratación</a></div>
   </footer>
 </main>
 

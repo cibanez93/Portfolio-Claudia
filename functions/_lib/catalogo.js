@@ -17,6 +17,14 @@ export const CURSOS = {
       // "dia-1": "",
     },
   },
+  "ia-asistente": {
+    titulo: "La IA como asistente de tu negocio",
+    pagina: "/curso-ia-asistente",
+    precio: "", // price_... de Stripe
+    videos: {
+      // "bienvenida": "", "leccion-1": "", … "leccion-9": "", "terminado": ""
+    },
+  },
 };
 
 // Pack con acceso a todos los cursos, presentes y futuros.

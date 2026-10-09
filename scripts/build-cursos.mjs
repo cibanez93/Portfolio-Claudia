@@ -109,7 +109,7 @@ function construir(archivo) {
       .replace(/<strong>Anexo ([A-Z])<\/strong>/g, (_, l) => `<a href="${raizCurso}anexo-${l.toLowerCase()}"><strong>Anexo ${l}</strong></a>`);
     const video = lec.recurso ? "" : `<div class="video" data-video="${clave}"><p>El vídeo de esta lección estará disponible muy pronto.</p></div>`;
     const cuerpo = `<main class="leccion" data-leccion="${clave}">
-  <p class="kicker">${lec.recurso ? "Recursos" : `Lección ${clases.indexOf(lec) + 1} de ${clases.length}`}</p>
+  <p class="kicker">${lec.recurso ? "Recursos" : esc(titulo)}</p>
   <h1>${esc(lec.titulo)}</h1>
   ${video}
   <article class="contenido">${contenido}</article>

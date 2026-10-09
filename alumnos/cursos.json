@@ -74,5 +74,81 @@
     "recurso": true
    }
   ]
+ },
+ {
+  "id": "ia-asistente",
+  "titulo": "La IA como asistente de tu negocio",
+  "lecciones": [
+   {
+    "slug": "bienvenida",
+    "titulo": "Bienvenida",
+    "recurso": false
+   },
+   {
+    "slug": "leccion-1",
+    "titulo": "Lección 1 · Qué puede hacer la IA por tu negocio (y qué no)",
+    "recurso": false
+   },
+   {
+    "slug": "leccion-2",
+    "titulo": "Lección 2 · Elige y prepara tu asistente",
+    "recurso": false
+   },
+   {
+    "slug": "leccion-3",
+    "titulo": "Lección 3 · La fórmula para pedirle cosas",
+    "recurso": false
+   },
+   {
+    "slug": "leccion-4",
+    "titulo": "Lección 4 · Correos y mensajes a clientes",
+    "recurso": false
+   },
+   {
+    "slug": "leccion-5",
+    "titulo": "Lección 5 · Publicaciones y textos para tu web",
+    "recurso": false
+   },
+   {
+    "slug": "leccion-6",
+    "titulo": "Lección 6 · Responder reseñas y comentarios",
+    "recurso": false
+   },
+   {
+    "slug": "leccion-7",
+    "titulo": "Lección 7 · Resumir, traducir y preparar documentos",
+    "recurso": false
+   },
+   {
+    "slug": "leccion-8",
+    "titulo": "Lección 8 · Ideas y decisiones de negocio",
+    "recurso": false
+   },
+   {
+    "slug": "leccion-9",
+    "titulo": "Lección 9 · Errores, límites y protección de datos",
+    "recurso": false
+   },
+   {
+    "slug": "terminado",
+    "titulo": "¡Terminado!",
+    "recurso": false
+   },
+   {
+    "slug": "anexo-a",
+    "titulo": "Anexo A · Biblioteca de 50 instrucciones",
+    "recurso": true
+   },
+   {
+    "slug": "anexo-b",
+    "titulo": "Anexo B · Ficha de tu negocio para la IA",
+    "recurso": true
+   },
+   {
+    "slug": "anexo-c",
+    "titulo": "Anexo C · Lista de revisión antes de enviar",
+    "recurso": true
+   }
+  ]
  }
 ]

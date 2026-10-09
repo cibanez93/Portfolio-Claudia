@@ -1,0 +1,10 @@
+# Copia este archivo como .dev.vars para probar en local (npm run dev). No lo subas a Git.
+SESSION_SECRET=cambia-esto-por-un-texto-largo-y-aleatorio
+STRIPE_SECRET_KEY=sk_test_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+RESEND_API_KEY=
+MAIL_FROM=Claudia Ibáñez <cursos@claudiaibanez.com>
+MAIL_REPLY_TO=cibanez.dev@outlook.com
+STREAM_CUSTOMER_CODE=
+STREAM_KEY_ID=
+STREAM_KEY_JWK=

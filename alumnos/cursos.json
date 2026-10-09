@@ -1,0 +1,78 @@
+[
+ {
+  "id": "google-maps",
+  "titulo": "Aparece en Google Maps en 7 días",
+  "lecciones": [
+   {
+    "slug": "bienvenida",
+    "titulo": "Bienvenida",
+    "recurso": false
+   },
+   {
+    "slug": "dia-1",
+    "titulo": "Día 1 · Crea o reclama tu Perfil de Empresa",
+    "recurso": false
+   },
+   {
+    "slug": "dia-2",
+    "titulo": "Día 2 · Categorías, datos básicos y servicios",
+    "recurso": false
+   },
+   {
+    "slug": "dia-3",
+    "titulo": "Día 3 · Tu descripción y tu web",
+    "recurso": false
+   },
+   {
+    "slug": "dia-4",
+    "titulo": "Día 4 · Fotos que convencen",
+    "recurso": false
+   },
+   {
+    "slug": "dia-5",
+    "titulo": "Día 5 · El sistema de reseñas",
+    "recurso": false
+   },
+   {
+    "slug": "dia-6",
+    "titulo": "Día 6 · Responder reseñas y publicar novedades",
+    "recurso": false
+   },
+   {
+    "slug": "dia-7",
+    "titulo": "Día 7 · Medir y mantener (10 minutos por semana)",
+    "recurso": false
+   },
+   {
+    "slug": "terminado",
+    "titulo": "¡Terminado!",
+    "recurso": false
+   },
+   {
+    "slug": "anexo-a",
+    "titulo": "Anexo A · Plantilla de descripción",
+    "recurso": true
+   },
+   {
+    "slug": "anexo-b",
+    "titulo": "Anexo B · Mensajes para pedir reseñas",
+    "recurso": true
+   },
+   {
+    "slug": "anexo-c",
+    "titulo": "Anexo C · Respuestas a reseñas",
+    "recurso": true
+   },
+   {
+    "slug": "anexo-d",
+    "titulo": "Anexo D · Calendario de 12 semanas de publicaciones",
+    "recurso": true
+   },
+   {
+    "slug": "anexo-e",
+    "titulo": "Anexo E · Hoja de seguimiento",
+    "recurso": true
+   }
+  ]
+ }
+]

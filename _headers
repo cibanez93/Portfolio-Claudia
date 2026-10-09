@@ -4,7 +4,7 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
-  Content-Security-Policy: frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'
+  Content-Security-Policy: frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self' https://checkout.stripe.com
 
 /img/*
   Cache-Control: public, max-age=604800
@@ -14,3 +14,10 @@
 
 /negocio/*
   X-Robots-Tag: noindex, nofollow
+
+/alumnos/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: private, no-store
+
+/acceso
+  X-Robots-Tag: noindex

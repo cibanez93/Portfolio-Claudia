@@ -2,7 +2,7 @@
 
 **Curso práctico para negocios locales · por Claudia Ibáñez**
 
-> Contenido del curso (lo que recibe quien compra). Cada día tiene una lección corta (texto + vídeo de 5–10 min), una tarea concreta y una lista para marcar. Se tarda entre 20 y 45 minutos al día.
+Cada día tiene un vídeo corto (5–10 min), la lección por escrito, una tarea concreta y una lista para marcar. Se tarda entre 20 y 45 minutos al día.
 
 ---
 
@@ -15,7 +15,7 @@ La respuesta corta: con un Perfil de Empresa en Google completo, verificado, con
 **Cómo funciona**
 - Cada día, una lección y una tarea. No pases al día siguiente sin terminar la tarea del anterior.
 - Al final de cada día tienes una lista para marcar. Si está todo marcado, vas bien.
-- Las plantillas (mensajes para pedir reseñas, respuestas, descripción, calendario de publicaciones) están en el **Anexo**. Cópialas y adáptalas.
+- Las plantillas (mensajes para pedir reseñas, respuestas, descripción, calendario de publicaciones) están en **Recursos**, al final del índice. Cópialas y adáptalas.
 
 **Lo que necesitas**
 - Una cuenta de Google (mejor una del negocio, no la personal).

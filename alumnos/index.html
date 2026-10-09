@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Mis cursos · Claudia Ibáñez</title>
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/css/alumnos.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="logo" href="/alumnos/">Mis cursos <span>/ Claudia Ibáñez</span></a>
+  <a class="salir" href="/api/salir">Salir</a>
+</header>
+<main>
+  <p class="kicker">Área de alumnos</p>
+  <h1 id="saludo">Hola</h1>
+  <p class="aviso" id="nuevo" hidden>¡Gracias por tu compra! Ya tienes acceso. La factura te llega por correo.</p>
+  <h2>Tus cursos</h2>
+  <ul class="cursos" id="mios"><li><p>Cargando…</p></li></ul>
+  <div id="mas" hidden>
+    <h2>Más cursos</h2>
+    <ul class="cursos" id="otros"></ul>
+  </div>
+  <p class="nota" style="margin:40px 0 60px">¿Dudas o problemas? Escríbeme a <a href="mailto:cibanez.dev@outlook.com">cibanez.dev@outlook.com</a>.</p>
+</main>
+</div>
+<script>
+(async () => {
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  if (new URLSearchParams(location.search).has("nuevo")) document.getElementById("nuevo").hidden = false;
+  const r = await fetch("/api/yo", { credentials: "same-origin" });
+  if (r.status === 401) { location.href = "/acceso?next=/alumnos/"; return; }
+  const yo = await r.json();
+  if (yo.nombre) document.getElementById("saludo").textContent = `Hola, ${yo.nombre.split(" ")[0]}`;
+  const mios = yo.cursos.filter((c) => c.acceso);
+  const otros = yo.cursos.filter((c) => !c.acceso);
+  document.getElementById("mios").innerHTML = mios.length
+    ? mios.map((c) => `<li><h3>${esc(c.titulo)}</h3><p></p><a class="btn dark" href="/alumnos/${encodeURIComponent(c.id)}/">Entrar</a></li>`).join("")
+    : `<li><p>Todavía no tienes cursos. Si acabas de comprar, espera un minuto y recarga la página.</p></li>`;
+  if (otros.length) {
+    document.getElementById("mas").hidden = false;
+    document.getElementById("otros").innerHTML = otros
+      .map((c) => `<li><h3>${esc(c.titulo)}</h3><p></p><a class="btn ghost" href="${esc(c.pagina)}">Ver curso</a></li>`).join("");
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Acceso alumnos · Claudia Ibáñez</title>
+<meta name="description" content="Entra a tus cursos con el correo con el que compraste.">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/css/alumnos.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="logo" href="/">Claudia Ibáñez <span>/ cursos</span></a>
+  <a class="salir" href="/cursos">Ver cursos</a>
+</header>
+<main class="acceso">
+  <p class="kicker">Área de alumnos</p>
+  <h1>Entra a tus cursos</h1>
+  <p class="aviso" data-msg="enviado" hidden>Si ese correo tiene algún curso, te acabamos de enviar un enlace para entrar. Revisa también la carpeta de spam o promociones.</p>
+  <p class="aviso error" data-msg="caducado" hidden>Ese enlace ha caducado o ya no es válido. Pide uno nuevo aquí abajo.</p>
+  <p class="aviso" data-msg="pendiente" hidden>Estamos confirmando tu pago. En unos minutos recibirás un correo con el acceso; si no, pide el enlace aquí abajo.</p>
+  <p class="aviso" data-msg="salida" hidden>Has cerrado la sesión.</p>
+  <form method="post" action="/api/login">
+    <label for="email">Tu correo (el de la compra)</label>
+    <input id="email" name="email" type="email" autocomplete="email" required placeholder="tu@correo.com">
+    <button class="btn dark" type="submit">Enviarme el enlace de acceso</button>
+  </form>
+  <p class="nota">No hace falta contraseña: te enviamos un enlace seguro que caduca en 30 minutos. Una vez dentro, tu sesión dura 6 meses en este dispositivo.</p>
+  <p class="nota">¿Problemas para entrar? Escríbeme a <a href="mailto:cibanez.dev@outlook.com">cibanez.dev@outlook.com</a>.</p>
+</main>
+</div>
+<script>
+const q = new URLSearchParams(location.search);
+document.querySelectorAll("[data-msg]").forEach((el) => { if (q.has(el.dataset.msg)) el.hidden = false; });
+</script>
+</body>
+</html>

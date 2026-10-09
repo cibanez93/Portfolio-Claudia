@@ -1,0 +1,13 @@
+{
+  "name": "claudiaibanez-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:cursos": "node scripts/build-cursos.mjs",
+    "dev": "wrangler pages dev . --kv ALUMNOS"
+  },
+  "devDependencies": {
+    "marked": "^18.1.0",
+    "wrangler": "^4.0.0"
+  }
+}

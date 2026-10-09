@@ -1,2 +1,5 @@
 _borradores/
 .DS_Store
+node_modules/
+.dev.vars
+.wrangler/

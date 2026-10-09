@@ -44,6 +44,7 @@ h3{font:700 17px/1.35 var(--sub); letter-spacing:-.02em; margin:26px 0 6px}
 .contenido{margin-top:10px}
 .contenido p, .contenido li{max-width:70ch}
 .contenido ul, .contenido ol{padding-left:1.3em}
+.contenido ol{padding-left:2em}
 .contenido li + li{margin-top:6px}
 .contenido li:has(> input[type=checkbox]){list-style:none; margin-left:-1.3em}
 .contenido input[type=checkbox]{width:18px; height:18px; accent-color:var(--deep); vertical-align:-3px; margin-right:6px; cursor:pointer}

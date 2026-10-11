@@ -1,0 +1,34 @@
+/* Estilo común de las imágenes de Instagram (@cibanez.dev). Mismos colores y tipografías que la web. */
+@font-face{font-family:"Bricolage Grotesque";font-weight:200 800;src:url(../fonts/BricolageGrotesque-latin.woff2) format("woff2")}
+@font-face{font-family:"Bricolage Grotesque";font-weight:200 800;src:url(../fonts/BricolageGrotesque-latin-ext.woff2) format("woff2");unicode-range:U+0100-024F}
+@font-face{font-family:Figtree;font-weight:300 900;src:url(../fonts/Figtree-latin.woff2) format("woff2")}
+@font-face{font-family:"Space Mono";font-weight:400;src:url(../fonts/SpaceMono-400-latin.woff2) format("woff2")}
+@font-face{font-family:"Space Mono";font-weight:700;src:url(../fonts/SpaceMono-700-latin.woff2) format("woff2")}
+:root{--bg:#F7F2EB;--surface:#FFFDFA;--ink:#43352C;--muted:#7A6455;--line:#E8DDD0;--sage:#DCE7D3;--deep:#5E7D57;--peach:#F0D2B8;--peach-soft:#FAE9DC}
+*{box-sizing:border-box}
+body{margin:0;background:#ccc}
+.s{width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--bg);color:var(--ink);font-family:Figtree}
+.s.story{height:1920px}
+.s.alt{background:var(--peach-soft)}
+.in{position:absolute;inset:0 90px}
+.meta{position:absolute;left:0;right:0;top:80px;display:flex;justify-content:space-between;font-family:"Space Mono";font-size:24px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.story .meta{top:230px}
+.foot{position:absolute;left:0;right:0;bottom:80px;display:flex;justify-content:space-between;align-items:center;font-family:"Space Mono";font-size:24px;letter-spacing:.12em;color:var(--muted)}
+.story .foot{bottom:300px}
+.body{position:absolute;left:0;right:0;top:230px}
+.k{font-family:"Space Mono";font-size:26px;letter-spacing:.16em;text-transform:uppercase;color:var(--deep);margin:0 0 30px}
+h1{font-family:"Bricolage Grotesque";font-weight:700;font-size:112px;line-height:1;letter-spacing:-.04em;margin:0}
+h2{font-family:"Bricolage Grotesque";font-weight:700;font-size:72px;line-height:1.02;letter-spacing:-.035em;margin:0 0 40px}
+mark{background:linear-gradient(transparent 58%,var(--peach) 58%,var(--peach) 92%,transparent 92%);color:inherit;padding:0 .04em}
+.sub{font-family:"Space Mono";font-size:30px;line-height:1.5;color:var(--muted);margin:40px 0 0;max-width:600px}
+.pill{display:inline-flex;gap:14px;align-items:center;background:var(--ink);color:var(--surface);font-family:"Space Mono";font-size:26px;letter-spacing:.06em;padding:18px 32px;border-radius:999px}
+.pill.light{background:var(--surface);color:var(--ink);border:2px solid var(--line)}
+.card{background:var(--surface);border:2px solid var(--line);border-radius:28px;padding:48px 48px;margin:0 0 30px;display:grid;grid-template-columns:96px 1fr;gap:0 12px}
+.n{font-family:"Space Mono";font-weight:700;font-size:32px;color:var(--deep);padding-top:4px}
+.card p{margin:0;font-size:38px;line-height:1.38;color:var(--muted)}
+.card b{color:var(--ink);font-weight:700}
+.list{list-style:none;padding:0;margin:0}
+.list li{background:var(--surface);border:2px solid var(--line);border-radius:22px;padding:28px 36px 28px 96px;margin:0 0 18px;font-size:36px;line-height:1.3;position:relative}
+.list li:before{content:"✕";position:absolute;left:36px;top:27px;font-family:"Space Mono";font-weight:700;color:#C0705A}
+.ilus{position:absolute;pointer-events:none}
+.blob{position:absolute;border-radius:50%;background:var(--sage)}

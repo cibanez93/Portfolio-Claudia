@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Diseño Web en Pamplona y Navarra | Páginas Web desde 400 €</title>
-<meta name="description" content="Diseño de páginas web en Pamplona y Navarra: webs a medida, tiendas online, reservas online y SEO local para negocios. Presupuesto cerrado desde 400 € + IVA.">
-<meta property="og:title" content="Diseño Web en Pamplona y Navarra | Páginas Web desde 400 €">
-<meta property="og:description" content="Diseño de páginas web en Pamplona y Navarra: webs a medida, tiendas online, reservas online y SEO local para negocios. Presupuesto cerrado desde 400 € + IVA.">
+<meta name="color-scheme" content="light only">
+<title>Diseño Web en Pamplona y Navarra | Páginas Web a Medida</title>
+<meta name="description" content="Diseño de páginas web en Pamplona y Navarra: webs a medida, tiendas online, reservas online y SEO local para negocios. Presupuesto cerrado y a medida.">
+<meta property="og:title" content="Diseño Web en Pamplona y Navarra | Páginas Web a Medida">
+<meta property="og:description" content="Diseño de páginas web en Pamplona y Navarra: webs a medida, tiendas online, reservas online y SEO local para negocios. Presupuesto cerrado y a medida.">
 <meta property="og:image" content="https://claudiaibanez.com/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -45,7 +46,6 @@
     "https://www.instagram.com/cibanez.dev/",
     "https://www.linkedin.com/in/cibanezdev"
   ],
-  "priceRange": "400€ - 2.000€",
   "founder": {
     "@type": "Person",
     "name": "Claudia Ibáñez",
@@ -81,22 +81,16 @@
       {
         "@type": "Offer",
         "name": "Web esencial",
-        "price": "400",
-        "priceCurrency": "EUR",
         "description": "Web de hasta 5 páginas con diseño propio, adaptada al móvil y con SEO básico."
       },
       {
         "@type": "Offer",
         "name": "Web a medida",
-        "price": "900",
-        "priceCurrency": "EUR",
         "description": "Web con reservas online conectadas, reseñas automáticas y panel de gestión."
       },
       {
         "@type": "Offer",
         "name": "Tienda online",
-        "price": "1600",
-        "priceCurrency": "EUR",
         "description": "Tienda online con catálogo, carrito, pago seguro, tarjetas regalo y bonos."
       }
     ]
@@ -145,7 +139,7 @@
       "name": "¿Qué pasa después de publicarla?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Puedo encargarme del mantenimiento y de los cambios que necesites por 40–50 €/mes + IVA, o dejarte todo preparado para que lo gestiones tú."
+        "text": "Puedo encargarme del mantenimiento y de los cambios que necesites con una cuota mensual, o dejarte todo preparado para que lo gestiones tú."
       }
     }
   ]
@@ -175,13 +169,6 @@ img{max-width:100%}
   --body:"Figtree", "Helvetica Neue", system-ui, sans-serif;
   --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
   --sub:"Space Mono", "Courier New", ui-monospace, monospace;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    color-scheme:dark;
-    --bg:#1C1713; --surface:#26201B; --ink:#F3EAE0; --muted:#B9A898; --line:#3A3029; --hire:#B5CBAA; --muted-on-sage:#B9A898; --deep-on-sage:#B5CBAA;
-    --accent:#4F6449; --accent-ink:#F3EAE0; --accent-text:#B5CBAA; --shadow:0 18px 40px -22px rgba(0,0,0,.8);
-  }
 }
 :root[data-theme="dark"]{
   color-scheme:dark;
@@ -433,7 +420,6 @@ footer{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; pa
 
 /* iconos: trazo negro (blanco en oscuro) sobre fondo claro semitransparente */
 :root{--ico-bg:rgba(58,46,39,.06); --ico-line:rgba(58,46,39,.10); --ico-fg:#33271F}
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){--ico-bg:rgba(255,255,255,.08); --ico-line:rgba(255,255,255,.14); --ico-fg:#FFFFFF} }
 :root[data-theme="dark"]{--ico-bg:rgba(255,255,255,.08); --ico-line:rgba(255,255,255,.14); --ico-fg:#FFFFFF}
 .ico, .ico-sm{display:inline-grid; place-items:center; flex:none; color:var(--ico-fg); background:var(--ico-bg); border:1px solid var(--ico-line); backdrop-filter:blur(6px)}
 .ico{width:48px; height:48px; border-radius:14px}
@@ -446,20 +432,16 @@ footer{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; pa
 .steps li::before{display:none}
 
 
-/* precios de lanzamiento */
-.pack .foot.price .brk{flex-basis:100%; height:0}
-.pack .foot.price .tag-launch{ font:600 10.5px/1 var(--mono); letter-spacing:.06em; text-transform:uppercase; color:#33271F; background:#F0D2B8; padding:5px 9px; border-radius:99px}
-.pack .foot.price .old{font:500 15px/1 var(--mono); color:var(--muted); text-decoration-thickness:1.5px}
+/* mantenimiento */
 .maint{margin-top:18px; font-size:14px; color:var(--muted)}
 .maint b{color:var(--ink); font-weight:600}
-@media (max-width:760px){ .pack .foot.price .old{font-size:13px} .maint{font-size:12.5px} }
+@media (max-width:760px){ .maint{font-size:12.5px} }
 
 /* logo en contacto */
 .contact-logo{display:block; width:min(230px,60%); height:auto; margin-bottom:18px}
 
 /* ===== más verde salvia y melocotón ===== */
 :root{--sage:#DCE7D3; --sage-soft:#EAF1E5; --peach:#F0D2B8; --peach-soft:#FAE9DC}
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){--sage:#33402F; --sage-soft:#29321F; --peach:#5A4031; --peach-soft:#3A2C23} }
 :root[data-theme="dark"]{--sage:#33402F; --sage-soft:#29321F; --peach:#5A4031; --peach-soft:#3A2C23}
 /* bandas de color a todo el ancho */
 #servicios, #proceso, #opiniones, #dudas{position:relative; border-top:0}
@@ -472,7 +454,6 @@ footer{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; pa
 /* paquete recomendado en verde */
 .pack.sel{background:var(--sage); --muted:var(--muted-on-sage); --accent-text:var(--deep-on-sage)}
 footer{--muted:var(--muted-on-sage)}
-.pack.sel .tag-launch{background:var(--surface)}
 .btn-hire{display:flex; justify-content:center; align-items:center; gap:8px; margin-top:4px; padding:12px 18px; border-radius:999px; background:var(--hire); color:var(--bg); font:600 15px/1 var(--body); text-decoration:none; transition:transform .15s, filter .15s}
 .btn-hire:hover{transform:translateY(-2px); filter:brightness(1.08)}
 .pack:focus-visible{outline:3px solid var(--accent-text); outline-offset:3px}
@@ -885,7 +866,7 @@ async function opinionesBooksy() {
         <h3>Web esencial</h3>
         <p>Para negocios que necesitan estar en internet con buena imagen.</p>
         <ul><li>Hasta 5 páginas</li><li>Diseño a medida y adaptado al móvil</li><li>Formulario de contacto y mapa</li><li>SEO básico para tu zona</li></ul>
-        <div class="foot price"><span class="tag-launch">Precio de <span class="mes">octubre</span></span><span class="brk"></span><small>desde</small> 400 €<s class="old" aria-label="precio normal 600 €">600 €</s><span class="iva">+ IVA · después, desde 600 €</span></div>
+        <div class="foot">Presupuesto cerrado a medida</div>
         <a class="btn-hire" aria-label="Contratar Web esencial por WhatsApp" href="https://wa.me/34655397379?text=Hola%20Claudia%2C%20quiero%20contratar%20el%20paquete%20Web%20esencial.%20%C2%BFHablamos%3F" target="_blank" rel="noopener">Contratar</a>
       </div>
       <div class="pack star sel" role="radio" tabindex="0" aria-checked="true">
@@ -893,7 +874,7 @@ async function opinionesBooksy() {
         <h3>Web a medida</h3>
         <p>Para salones, centros y consultas que viven de las citas.</p>
         <ul><li>Todo lo de Web esencial</li><li>Reservas conectadas (Booksy u otras)</li><li>Reseñas automáticas</li><li>Panel para editar servicios y precios</li><li>Blog y galería</li></ul>
-        <div class="foot price"><span class="tag-launch">Precio de <span class="mes">octubre</span></span><span class="brk"></span><small>desde</small> 900 €<s class="old" aria-label="precio normal 1.300 €">1.300 €</s><span class="iva">+ IVA · después, desde 1.300 €</span></div>
+        <div class="foot">Presupuesto cerrado a medida</div>
         <a class="btn-hire" aria-label="Contratar Web a medida por WhatsApp" href="https://wa.me/34655397379?text=Hola%20Claudia%2C%20quiero%20contratar%20el%20paquete%20Web%20a%20medida.%20%C2%BFHablamos%3F" target="_blank" rel="noopener">Contratar</a>
       </div>
       <div class="pack" role="radio" tabindex="-1" aria-checked="false">
@@ -901,11 +882,11 @@ async function opinionesBooksy() {
         <h3>Tienda online</h3>
         <p>Para quien quiere vender productos, bonos o tarjetas regalo.</p>
         <ul><li>Todo lo de Web a medida</li><li>Catálogo y carrito</li><li>Pago online seguro</li><li>Tarjetas regalo y bonos</li></ul>
-        <div class="foot price"><span class="tag-launch">Precio de <span class="mes">octubre</span></span><span class="brk"></span><small>desde</small> 1.600 €<s class="old" aria-label="precio normal 2.000 €">2.000 €</s><span class="iva">+ IVA · después, desde 2.000 €</span></div>
+        <div class="foot">Presupuesto cerrado a medida</div>
         <a class="btn-hire" aria-label="Contratar Tienda online por WhatsApp" href="https://wa.me/34655397379?text=Hola%20Claudia%2C%20quiero%20contratar%20el%20paquete%20Tienda%20online.%20%C2%BFHablamos%3F" target="_blank" rel="noopener">Contratar</a>
       </div>
     </div>
-    <p class="maint"><b>Mantenimiento mensual opcional:</b> 40–50 €/mes + IVA.</p>
+    <p class="maint"><b>Mantenimiento mensual opcional</b> para cambios, actualizaciones y soporte.</p>
   </section>
 
   <section id="dudas">
@@ -915,7 +896,7 @@ async function opinionesBooksy() {
       <details><summary>¿Podré cambiar cosas sin ayuda?</summary><p>Sí. Te preparo un panel sencillo para editar textos, precios, fotos y el blog, y te enseño a usarlo.</p></details>
       <details><summary>Ya tengo Booksy o Instagram, ¿lo aprovechamos?</summary><p>Claro. Conecto tus reservas, tus reseñas y tus redes para que la web y tus perfiles trabajen juntos.</p></details>
       <details><summary>¿Trabajas solo en Pamplona?</summary><p>Estoy en Burlada (Navarra) y trabajo con negocios de Pamplona y de toda Navarra, en persona o por videollamada. También hago webs para clientes de cualquier parte de España. <a href="/diseno-web-pamplona">Más sobre diseño web en Pamplona</a>.</p></details>
-      <details><summary>¿Qué pasa después de publicarla?</summary><p>Puedo encargarme del mantenimiento y de los cambios que necesites por 40–50 €/mes + IVA, o dejarte todo preparado para que lo gestiones tú.</p></details>
+      <details><summary>¿Qué pasa después de publicarla?</summary><p>Puedo encargarme del mantenimiento y de los cambios que necesites con una cuota mensual, o dejarte todo preparado para que lo gestiones tú.</p></details>
     </div>
   </section>
 
@@ -1027,14 +1008,6 @@ async function opinionesBooksy() {
 
 // Burbuja de WhatsApp
 document.getElementById('wa-bubble-x').addEventListener('click', () => { document.getElementById('wa-bubble').hidden = true; });
-
-// Mes actual en los precios
-(() => {
-  try {
-    const mes = new Intl.DateTimeFormat('es-ES', { month: 'long', timeZone: 'Europe/Madrid' }).format(new Date());
-    document.querySelectorAll('.mes').forEach(el => { el.textContent = mes; });
-  } catch (e) {}
-})();
 
 // Paquetes: el seleccionado se pone en verde
 (() => {

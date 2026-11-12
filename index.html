@@ -335,22 +335,30 @@ section{padding-block:80px; border-top:1px solid var(--line)}
 
 .stack{display:flex; flex-wrap:wrap; gap:6px; margin-top:20px}
 
-/* más trabajos */
-.work{display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:48px; align-items:center}
-.work > a{display:block; color:inherit; text-decoration:none}
-.work-txt{display:grid; gap:14px; align-content:start}
-.work-txt .kicker{font:500 12px/1 var(--mono); letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
-.work-txt h3{font-size:clamp(26px,3vw,34px); font-weight:800}
-.work-txt p{color:var(--muted)}
-.work-txt ul{margin:0; padding-left:18px; color:var(--muted); display:grid; gap:6px}
-.work-txt .stack{margin-top:4px}
-.work-txt .btn{justify-self:start; margin-top:6px}
-@media (max-width:900px){ .work{grid-template-columns:1fr; gap:28px} }
-.works{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:40px; margin-top:64px}
-.works .work-txt{margin-top:22px; gap:10px}
-.works .work-txt h3{font-size:clamp(22px,2.4vw,26px)}
+/* más trabajos: carrusel horizontal */
+#trabajos .head{align-items:center}
+.works-nav{display:flex; gap:8px}
+.works-nav button{width:44px; height:44px; border-radius:50%; border:1.5px solid var(--line); background:var(--surface); color:var(--ink); font:600 18px/1 var(--body); cursor:pointer; transition:transform .15s, opacity .2s}
+.works-nav button:hover{transform:translateY(-2px)}
+.works-nav button:disabled{opacity:.35; cursor:default; transform:none}
+.works{display:flex; gap:28px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; overscroll-behavior-x:contain; scrollbar-width:none; margin-inline:calc(-1*clamp(16px,4vw,48px)); padding:12px clamp(16px,4vw,48px) 24px; scroll-padding-inline:clamp(16px,4vw,48px)}
+.works::-webkit-scrollbar{display:none}
+.works:focus-visible{outline:2px solid var(--deep); outline-offset:4px}
+.works > article{flex:0 0 min(520px,82vw); scroll-snap-align:start; display:grid; grid-template-rows:auto 1fr; gap:22px}
 .works > article > a{display:block; color:inherit; text-decoration:none}
-@media (max-width:760px){ .works{grid-template-columns:1fr; gap:48px; margin-top:48px} }
+.works .browser{transform:none}
+.works .browser:hover{transform:translateY(-4px)}
+.works .shot{aspect-ratio:960/645; object-fit:cover; object-position:top}
+.works .shot.contain{object-fit:contain; object-position:center; background:#242424}
+.work-txt{display:grid; gap:10px; align-content:start}
+.work-txt .kicker{font:500 12px/1.3 var(--mono); letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+.work-txt h3{font-size:clamp(22px,2.4vw,26px); font-weight:800}
+.work-txt p{color:var(--muted)}
+.work-txt .stack{margin-top:2px}
+.work-txt .btn{justify-self:start; margin-top:6px}
+.works-hint{font:500 12px/1 var(--mono); color:var(--muted); margin-top:4px}
+@media (max-width:760px){ .works-nav{display:none} .works{gap:18px} }
+@media (min-width:761px){ .works-hint{display:none} }
 @media (prefers-reduced-motion:reduce){ .typing b, .refresh.spin span:first-child{animation:none} }
 
 
@@ -839,40 +847,52 @@ async function opinionesBooksy() {
 
 
   <section id="trabajos">
-    <div class="head"><h2>Más trabajos</h2><p>Landings para una clínica de medicina estética de Pamplona y una aplicación de escritorio.</p></div>
-    <div class="work">
-      <a href="https://insideout.esteticare.es" target="_blank" rel="noopener" aria-label="Ver la landing Inside Out de EstetiCare (se abre en otra pestaña)">
-        <div class="browser">
-          <div class="bar"><b></b><b></b><b></b><div class="url">insideout.esteticare.es</div></div>
-          <img class="shot" src="/img/esteticare-insideout.webp" srcset="/img/esteticare-insideout-640.webp 640w, /img/esteticare-insideout.webp 960w" sizes="(max-width:900px) 100vw, 560px" width="960" height="645" loading="lazy" alt="Landing Inside Out de EstetiCare: «Tratamiento facial médico personalizado» sobre un vídeo del doctor, con el formulario «Pide tu primera valoración» a la derecha.">
-        </div>
-      </a>
-      <div class="work-txt">
-        <span class="kicker">EstetiCare · Medicina estética en Pamplona</span>
-        <h3>Inside Out: tratamiento facial médico</h3>
-        <p>Landing para el tratamiento estrella de la clínica, pensada para que quien llega desde un anuncio pida su cita de valoración.</p>
-        <ul>
-          <li>Formulario de cita en la portada, sobre un vídeo del doctor</li>
-          <li>Antes y después que se compara deslizando</li>
-          <li>Nota y reseñas de Google actualizadas solas</li>
-          <li>Botones de llamada y WhatsApp siempre a mano</li>
-        </ul>
-        <div class="stack"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">API de Google</span></div>
-        <a class="btn ghost" href="https://insideout.esteticare.es" target="_blank" rel="noopener">Ver la landing →</a>
-      </div>
+    <div class="head"><h2>Mis trabajos</h2>
+      <div class="works-nav"><button type="button" id="works-prev" aria-label="Trabajo anterior">←</button><button type="button" id="works-next" aria-label="Trabajo siguiente">→</button></div>
     </div>
-    <div class="works">
+    <div class="works" id="works" tabindex="0" role="region" aria-label="Mis trabajos, desliza para ver más">
       <article>
-        <a href="https://360reset.esteticare.es" target="_blank" rel="noopener" aria-label="Ver la landing 360Reset+: pérdida de peso médica de EstetiCare (se abre en otra pestaña)">
+        <a href="https://www.laksmirbeautysalon.com" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <div class="browser">
+            <div class="bar"><b></b><b></b><b></b><div class="url">laksmirbeautysalon.com</div></div>
+            <img class="shot" src="/img/laksmir.webp" srcset="/img/laksmir-640.webp 640w, /img/laksmir.webp 960w" sizes="(max-width:760px) 82vw, 520px" width="960" height="645" loading="lazy" alt="Página de inicio de Laksmir Beauty Salon: «Tu momento para brillar», con botones de reserva y valoraciones de Google y Booksy.">
+          </div>
+        </a>
+        <div class="work-txt">
+          <span class="kicker">Laksmir Beauty Salon · Peluquería y estética</span>
+          <h3>Web completa con tienda y reservas</h3>
+          <p>Web a medida para un salón de belleza: asistente con IA, reseñas de Google y Booksy que se actualizan solas, antes y después y bonos regalo.</p>
+          <div class="stack"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">MySQL</span><span class="tag">IA</span></div>
+          <a class="btn ghost" href="https://www.laksmirbeautysalon.com" target="_blank" rel="noopener">Ver la web →</a>
+        </div>
+      </article>
+      <article>
+        <a href="https://insideout.esteticare.es" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <div class="browser">
+            <div class="bar"><b></b><b></b><b></b><div class="url">insideout.esteticare.es</div></div>
+            <img class="shot" src="/img/esteticare-insideout.webp" srcset="/img/esteticare-insideout-640.webp 640w, /img/esteticare-insideout.webp 960w" sizes="(max-width:760px) 82vw, 520px" width="960" height="645" loading="lazy" alt="Landing Inside Out de EstetiCare: «Tratamiento facial médico personalizado» sobre un vídeo del doctor, con el formulario «Pide tu primera valoración».">
+          </div>
+        </a>
+        <div class="work-txt">
+          <span class="kicker">EstetiCare · Medicina estética en Pamplona</span>
+          <h3>Inside Out: tratamiento facial médico</h3>
+          <p>Landing para que quien llega desde un anuncio pida cita: formulario sobre un vídeo del doctor, antes y después, nota de Google y botones de llamada y WhatsApp.</p>
+          <div class="stack"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span></div>
+          <a class="btn ghost" href="https://insideout.esteticare.es" target="_blank" rel="noopener">Ver la landing →</a>
+        </div>
+      </article>
+      <article>
+        <a href="https://360reset.esteticare.es" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
           <div class="browser">
             <div class="bar"><b></b><b></b><b></b><div class="url">360reset.esteticare.es</div></div>
-            <img class="shot" src="/img/esteticare-360reset.webp" srcset="/img/esteticare-360reset-640.webp 640w, /img/esteticare-360reset.webp 960w" sizes="(max-width:760px) 100vw, 50vw" width="960" height="645" loading="lazy" alt="Landing 360Reset+ de EstetiCare: «Empieza a perder peso con tu médico», con el formulario «Pide tu primera valoración».">
+            <img class="shot" src="/img/esteticare-360reset.webp" srcset="/img/esteticare-360reset-640.webp 640w, /img/esteticare-360reset.webp 960w" sizes="(max-width:760px) 82vw, 520px" width="960" height="645" loading="lazy" alt="Landing 360Reset+ de EstetiCare: «Empieza a perder peso con tu médico», con el formulario «Pide tu primera valoración».">
           </div>
         </a>
         <div class="work-txt">
           <span class="kicker">EstetiCare · Programa médico</span>
           <h3>360Reset+: pérdida de peso médica</h3>
           <p>Para un programa médico de 6 meses. Formulario de valoración en la portada, historias de pacientes y nota de Google.</p>
+          <div class="stack"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span></div>
           <a class="btn ghost" href="https://360reset.esteticare.es" target="_blank" rel="noopener">Ver la landing →</a>
         </div>
       </article>
@@ -880,17 +900,18 @@ async function opinionesBooksy() {
         <div>
           <div class="browser">
             <div class="bar"><b></b><b></b><b></b><div class="url">Cantina · aplicación de escritorio</div></div>
-            <img class="shot" src="/img/cantina.webp" srcset="/img/cantina-640.webp 640w, /img/cantina.webp 960w" sizes="(max-width:760px) 100vw, 50vw" width="960" height="288" loading="lazy" alt="Portada de la aplicación Cantina: «Reserva tu lugar», desarrollado por Claudia.">
+            <img class="shot contain" src="/img/cantina.webp" srcset="/img/cantina-640.webp 640w, /img/cantina.webp 960w" sizes="(max-width:760px) 82vw, 520px" width="960" height="288" loading="lazy" alt="Portada de la aplicación Cantina: «Reserva tu lugar», desarrollado por Claudia.">
           </div>
         </div>
         <div class="work-txt">
           <span class="kicker">Proyecto en equipo · Formación DAM</span>
           <h3>Cantina: reservas de mesa</h3>
-          <p>Aplicación de escritorio para reservar sitio en una cantina: registro e inicio de sesión, plano para elegir la silla, «Mi reserva» para cambiarla o anularla y panel de administración.</p>
+          <p>Aplicación de escritorio para reservar sitio en una cantina: registro e inicio de sesión, plano para elegir la silla, «Mi reserva» y panel de administración.</p>
           <div class="stack"><span class="tag">Python</span><span class="tag">CustomTkinter</span><span class="tag">SQLite</span></div>
         </div>
       </article>
     </div>
+    <p class="works-hint">Desliza para ver más →</p>
   </section>
 
   <section id="opiniones">
@@ -1096,5 +1117,16 @@ document.getElementById('wa-bubble-x').addEventListener('click', () => { documen
 })();
 </script>
 
+<script>
+// Mis trabajos: flechas del carrusel
+(()=>{ const t=document.getElementById('works'), prev=document.getElementById('works-prev'), next=document.getElementById('works-next');
+  if(!t) return;
+  const paso=()=>{ const c=t.querySelector('article'); return c ? c.getBoundingClientRect().width+28 : t.clientWidth; };
+  const estado=()=>{ prev.disabled=t.scrollLeft<4; next.disabled=t.scrollLeft+t.clientWidth>=t.scrollWidth-4; };
+  prev.addEventListener('click',()=>t.scrollBy({left:-paso()}));
+  next.addEventListener('click',()=>t.scrollBy({left:paso()}));
+  t.addEventListener('scroll',estado,{passive:true}); addEventListener('resize',estado); estado();
+})();
+</script>
 </body>
 </html>

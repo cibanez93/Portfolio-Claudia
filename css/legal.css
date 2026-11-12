@@ -6,9 +6,6 @@
   --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
   --sub:"Space Mono", "Courier New", ui-monospace, monospace;
 }
-@media (prefers-color-scheme: dark){
-  :root{color-scheme:dark; --bg:#1C1713; --surface:#26201B; --ink:#F3EAE0; --muted:#B9A898; --line:#3A3029; --accent:#4F6449; --accent-text:#B5CBAA; --peach:#5A4031}
-}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0; background:var(--bg); color:var(--ink); font:400 15px/1.75 var(--mono); padding-inline:clamp(16px,4vw,48px)}

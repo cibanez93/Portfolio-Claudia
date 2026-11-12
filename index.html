@@ -346,6 +346,11 @@ section{padding-block:80px; border-top:1px solid var(--line)}
 .work-txt .stack{margin-top:4px}
 .work-txt .btn{justify-self:start; margin-top:6px}
 @media (max-width:900px){ .work{grid-template-columns:1fr; gap:28px} }
+.works{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:40px; margin-top:64px}
+.works .work-txt{margin-top:22px; gap:10px}
+.works .work-txt h3{font-size:clamp(22px,2.4vw,26px)}
+.works > article > a{display:block; color:inherit; text-decoration:none}
+@media (max-width:760px){ .works{grid-template-columns:1fr; gap:48px; margin-top:48px} }
 @media (prefers-reduced-motion:reduce){ .typing b, .refresh.spin span:first-child{animation:none} }
 
 
@@ -834,7 +839,7 @@ async function opinionesBooksy() {
 
 
   <section id="trabajos">
-    <div class="head"><h2>Más trabajos</h2><p>Landings para clínicas y negocios que hacen campañas de anuncios.</p></div>
+    <div class="head"><h2>Más trabajos</h2><p>Landings para una clínica de medicina estética de Pamplona, una por cada campaña de anuncios.</p></div>
     <div class="work">
       <a href="https://insideout.esteticare.es" target="_blank" rel="noopener" aria-label="Ver la landing Inside Out de EstetiCare (se abre en otra pestaña)">
         <div class="browser">
@@ -855,6 +860,36 @@ async function opinionesBooksy() {
         <div class="stack"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">API de Google</span></div>
         <a class="btn ghost" href="https://insideout.esteticare.es" target="_blank" rel="noopener">Ver la landing →</a>
       </div>
+    </div>
+    <div class="works">
+      <article>
+        <a href="https://360reset.esteticare.es" target="_blank" rel="noopener" aria-label="Ver la landing 360Reset+: pérdida de peso médica de EstetiCare (se abre en otra pestaña)">
+          <div class="browser">
+            <div class="bar"><b></b><b></b><b></b><div class="url">360reset.esteticare.es</div></div>
+            <img class="shot" src="/img/esteticare-360reset.webp" srcset="/img/esteticare-360reset-640.webp 640w, /img/esteticare-360reset.webp 960w" sizes="(max-width:760px) 100vw, 50vw" width="960" height="645" loading="lazy" alt="Landing 360Reset+ de EstetiCare: «Empieza a perder peso con tu médico», con el formulario «Pide tu primera valoración».">
+          </div>
+        </a>
+        <div class="work-txt">
+          <span class="kicker">EstetiCare · Programa médico</span>
+          <h3>360Reset+: pérdida de peso médica</h3>
+          <p>Para un programa médico de 6 meses. Formulario de valoración en la portada, historias de pacientes y nota de Google.</p>
+          <a class="btn ghost" href="https://360reset.esteticare.es" target="_blank" rel="noopener">Ver la landing →</a>
+        </div>
+      </article>
+      <article>
+        <a href="https://formacion.esteticare.es" target="_blank" rel="noopener" aria-label="Ver la landing Formación para médicos de EstetiCare (se abre en otra pestaña)">
+          <div class="browser">
+            <div class="bar"><b></b><b></b><b></b><div class="url">formacion.esteticare.es</div></div>
+            <img class="shot" src="/img/esteticare-formacion.webp" srcset="/img/esteticare-formacion-640.webp 640w, /img/esteticare-formacion.webp 960w" sizes="(max-width:760px) 100vw, 50vw" width="960" height="645" loading="lazy" alt="Landing de formación de EstetiCare: «Formación avanzada en medicina estética» sobre un vídeo del doctor, con el formulario «Solicita fechas y plazas».">
+          </div>
+        </a>
+        <div class="work-txt">
+          <span class="kicker">EstetiCare · Cursos de medicina estética</span>
+          <h3>Formación para médicos</h3>
+          <p>Para los cursos del doctor, dirigidos a médicos de toda España. Vídeo en la portada y un formulario para pedir fechas y plazas.</p>
+          <a class="btn ghost" href="https://formacion.esteticare.es" target="_blank" rel="noopener">Ver la landing →</a>
+        </div>
+      </article>
     </div>
   </section>
 
